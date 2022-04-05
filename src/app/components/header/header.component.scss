@@ -1,3 +1,5 @@
+@import '../../../assets/stylesheet/variables';
+
 #curtain{
     top: 0;
     left:0;
@@ -90,7 +92,7 @@
   header{
       display: flex;
       justify-content: center;
-        background-color: #4C74C9;
+        background-color: $theme-color;
         color: #fff;
         height:60px;
       .logo{

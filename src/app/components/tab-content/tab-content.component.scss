@@ -1,3 +1,4 @@
+@import '../../../assets/stylesheet/variables';
 ul{
     display: flex;
     li{
@@ -10,8 +11,8 @@ ul{
         color: #888;
         width: 25%;
         &.active{
-          color: #4C74C9;
-          border-color: #4C74C9;
+          color: $theme-color;
+          border-color: $theme-color;
         }
       }  
   }
