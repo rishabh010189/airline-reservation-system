@@ -12,6 +12,7 @@ export class TDropdownComponent implements OnInit {
   @Input() options?:any[];
   @Input() labelTxt:string;
   @Input() inputType:any;
+  @Input() isMandatory:boolean;
   displayedValue:string;
   inputTypeEnum:any;
   todayDate:string;
@@ -30,7 +31,10 @@ export class TDropdownComponent implements OnInit {
     switch(this.inputType) {
       case InputType.select : {
         const selectedOption = this.options!.find(item => item.code === selectedValue);
-        if(selectedOption && 'state' in selectedOption){
+        if(!selectedOption || selectedValue === ""){
+          // do nothing
+        }
+        else if(selectedOption && 'state' in selectedOption){
           this.displayedValue = `(${selectedOption.code}) ${selectedOption.name}, ${selectedOption.state}, ${selectedOption.country}`
           this.onSelect.emit(selectedOption)
         }
