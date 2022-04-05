@@ -1,0 +1,51 @@
+.slider{
+    width: 100%;
+    height: 100vh;
+    position:fixed;
+    top:0;
+    right:calc(0px - 100%);
+    transition: right 1s ease-in-out;
+    z-index:10;
+    background-color: #222;
+    overflow: auto;
+    &.expanded{
+        right:0;
+    }
+    header{
+        background-color: #4C74C9;
+        color: #fff;
+        .container{
+            display: flex;
+            padding: 10px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            .back{
+                font-size: 1.2em;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+            .header-content{
+                flex-grow: 1;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.backdrop{
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index:9;
+    top:0px;
+    left:0px;
+    visibility:hidden;
+    transition: visibility 1s ease-in-out;
+    &.visible{
+      visibility:visible;
+      transition: visibility 1s ease-in-out;
+    }
+}

@@ -1,0 +1,27 @@
+<fieldset>
+    <legend>{{labelTxt}}</legend>
+    <ng-container [ngSwitch]="inputType">
+        
+        <span *ngSwitchCase="inputTypeEnum.select">
+            <span class="display">{{displayedValue}}</span>
+            <select (change)="onChange($event)" name="{{labelTxt}}">
+                <option *ngFor="let option of options" value="{{option.code}}">{{option.name}}</option>
+            </select>
+        </span>
+
+        <span *ngSwitchCase="inputTypeEnum.date">
+            <input type="date" id="start" name="start"
+             (change)="onChange($event)"
+            [min]="todayDate"/>
+        </span>
+
+        <span *ngSwitchCase="inputTypeEnum.input">
+            <input type="number" id="passenger" name="passenger" value="0"
+             (change)="onChange($event)"/>
+        </span>
+
+        <span *ngSwitchDefault>
+            Hello
+        </span>
+    </ng-container>
+</fieldset>

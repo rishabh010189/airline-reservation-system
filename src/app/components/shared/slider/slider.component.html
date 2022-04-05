@@ -1,0 +1,15 @@
+<div class="slider" [ngClass]="{'expanded': isVisible}">
+    <header>
+        <div class="container">
+            <div class="back" (click)="onBackClick()">
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+            </div>
+            <div class="header-content">
+                {{isSortingMenu ? 'Sort By' : 'Filter By'}}
+            </div>
+        </div>
+    </header>
+    <ng-container [ngTemplateOutlet]="sliderTemplateRef"></ng-container>
+</div>
+
+<div class="backdrop" [ngClass]="{'visible': isVisible}"></div>

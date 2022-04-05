@@ -1,0 +1,66 @@
+<sub-header [flightSearchCriteria]="flightSearchCriteria"></sub-header>
+<div class="container" *ngIf="isLoading">
+    <div class="loader" style="text-align:center">
+        <img style="max-width:100%" src="../../../assets/img/loader.gif" alt="loading flights">
+    </div>
+</div>
+<ng-container *ngIf="!isLoading && filteredFlights && filteredFlights.length">
+
+    <div class="container">
+        <div class="card" *ngFor="let flight of filteredFlights">
+            <div class="airlines-info">
+                <img src="../../../assets/img/{{flight?.imgHandle}}" alt={{flight?.airlines}} />
+                <span>{{flight?.airlines}}</span>
+            </div>
+            <div class="route">
+                <div class="from">
+                    <div>{{flight?.departTime}}</div>
+                    <div>{{flight?.departure?.code}}</div>
+                </div>
+                <div class="map">
+                    <div class="duration">{{flight?.travelTime}}</div>
+                    <div class="line"><span class="additional"></span></div>
+                    <span *ngFor="let stoppage of flight.stoppageCities">
+                        <div class="stop">{{flight?.numOfStoppages}} Stop({{stoppage.code}})</div>
+                    </span>
+                </div>
+                <div class="to">
+                    <div>{{flight?.arrivalTime}}</div>
+                    <div>{{flight?.destination?.code}}</div>
+                </div>
+            </div>
+            <div class="fare">
+                <div class="fare-details" *ngFor="let fare of flight.fareOptions">
+                    <div class="price">{{fare?.price | currency}}</div>
+                    <div class="travelling-class">{{fare?.cabinClass}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!isLoading && (!filteredFlights || !filteredFlights.length)">
+    <div style="text-align: center;margin-top: 20px;">
+        <img style="max-width:100%" src="../../../assets/img/no_flight.jpg" alt="no flights to show">
+        <h2>No flights found matching you preferences</h2>
+    </div>
+</ng-container>
+
+<div class="floater">
+    <div class="sort" (click)="onSortClick()">Sort</div>
+    <div class="filter" (click)="onFilterClick()">Filter</div>
+</div>
+
+
+<slider [isVisible]="isSliderVisible" [sliderTemplateRef]="sortTemplate" 
+[isSortingMenu] = "isSortOptionsVisible"
+(closedEvent)="onSliderCloseEvent($event)">
+    <ng-template #sortTemplate>
+        <ng-container *ngIf="isSortOptionsVisible; else filterTemplate">
+            <sorting-template (onSortEvent)="onSortingAppliedEvent($event)"></sorting-template>
+        </ng-container>
+        <ng-template #filterTemplate>
+            <filter-template (onFilterEvent)="onFilterAppliedEvent($event)"></filter-template>
+        </ng-template>
+    </ng-template>
+</slider>

@@ -1,0 +1,32 @@
+.filter-container {
+    display: block;
+    position: relative;
+    margin: 40px auto;
+    height: auto;
+    width: 500px;
+    padding: 20px;
+    h2 {
+      color: #aaaaaa;
+    }
+    .price-filter{
+        margin-top: 20px;
+        display: flex;
+        > div{
+            padding: 5px;
+            flex-grow: 1;
+            fieldset{
+                input{
+                    background: transparent !important;
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+    .range-selector{
+        input{
+
+            width: 100%;
+            margin-top: 50px;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [ngClass]="{'active':tab.isActive}">
+        <i [ngClass]="tab.tabIcon" aria-hidden="true"></i>
+        {{ tab.tabTitle }}
+    </li>
+</ul>
+<ng-content></ng-content>

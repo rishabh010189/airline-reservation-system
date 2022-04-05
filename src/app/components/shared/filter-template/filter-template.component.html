@@ -1,0 +1,22 @@
+<div class="filter-container">
+    <h2>Price Range</h2>
+    <div class="price-filter">
+        <div>
+            <t-dropdown [inputType]="inputTypeEnum.input" [labelTxt]="'Minimum Price'"
+            (onSelect)="onMinPriceSelect($event)"></t-dropdown>
+        </div>
+        <div>
+            <t-dropdown [inputType]="inputTypeEnum.input" [labelTxt]="'Maximum Price'"
+            (onSelect)="onMaxPriceSelect($event)"></t-dropdown>
+        </div>
+
+    </div>
+
+    <div class="range-selector">
+        <input type="range" id="pricerange" name="pricerange" min="0" max="11">
+    </div>
+
+    <div class="cta">
+        <primary-button [textToBeDisplayed]="'Done'" (onClickBtn)="handleOnClickEvent($event)"></primary-button>
+    </div>
+</div>

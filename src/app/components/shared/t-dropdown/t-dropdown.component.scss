@@ -1,0 +1,27 @@
+fieldset{
+    position: relative;
+    border-radius: 5px;
+    border-color: #efefef;
+    border-style: solid;
+    legend{
+        margin-left: 10px;
+        color: #ccc;
+    }
+    select, input[type="date"], input[type="number"]{
+        width: 100%;
+        height: 45px;
+        border: 0 !important;
+        padding: 10px;
+        font-size: 14px;
+        &:focus{
+            outline: none;
+        }
+    }
+    .display{
+        position: absolute;
+        background-color: #fff;
+        padding: 12px;
+        font-size: 14px;
+        height: 100%;
+    }
+}

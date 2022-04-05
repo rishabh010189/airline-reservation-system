@@ -1,0 +1,17 @@
+<div class="container">
+
+    <ul>
+        <li *ngFor="let option of sortingList; let i = index">
+            <input type="radio" [id]="option.sortValue" 
+            name="sortBy" [value]="option"
+            (change)="radioChangehandler(option)">
+            <label for="{{option.sortValue}}">{{option.sortName}}</label>
+
+            <div class="check"></div>
+        </li>
+    </ul>
+
+    <div class="cta">
+        <primary-button [disabled]="!selectedOption" [textToBeDisplayed]="'Done'" (onClickBtn)="handleOnClickEvent($event)"></primary-button>
+    </div>
+</div>

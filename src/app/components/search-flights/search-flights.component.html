@@ -1,0 +1,41 @@
+<div class="container">
+    <form>
+        <div class="locations">
+            <div>
+                <t-dropdown [inputType]="inputTypeEnum.select" [options]="departureOptions" [labelTxt]="'Departure'"
+                (onSelect)="onDepartureSelect($event)"></t-dropdown>
+            </div>
+            <div>
+                <t-dropdown [inputType]="inputTypeEnum.select" [options]="departureOptions" [labelTxt]="'Destination'"
+                (onSelect)="onDestinationSelect($event)"></t-dropdown>
+            </div>
+        </div>
+
+        <div class="duration">
+            <div>
+                <t-dropdown [inputType]="inputTypeEnum.date" [labelTxt]="'Depart Date'"
+                (onSelect)="onDepartureDateSelect($event)"></t-dropdown>
+            </div>
+            <div>
+                <t-dropdown [inputType]="inputTypeEnum.date" [labelTxt]="'Return Date'"
+                (onSelect)="onReturnDateSelect($event)"></t-dropdown>
+            </div>
+        </div>
+
+        <div class="additional">
+            <div>
+                <t-dropdown [inputType]="inputTypeEnum.select" [options]="passengersOptions" [labelTxt]="'Travellers'"
+                (onSelect)="onTravellersSelect($event)"></t-dropdown>
+            </div>
+            <div>
+                <t-dropdown [inputType]="inputTypeEnum.select" [options]="classOptions" [labelTxt]="'Class'"
+                (onSelect)="onClassSelect($event)"></t-dropdown>
+            </div>
+        </div>
+
+        <div class="cta">
+            <primary-button [disabled]="getDisabledClass()" [textToBeDisplayed]="'Search Flights'" (onClickBtn)="handleOnClickEvent($event)"></primary-button>
+        </div>
+
+    </form>
+</div>

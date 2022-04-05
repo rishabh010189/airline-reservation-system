@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "nagarro"
+  "defaultProject": "nagarro",
+  "cli": {
+    "analytics": "08e0fdd3-2f7a-4aac-83b3-cb100a671d40"
+  }
 }

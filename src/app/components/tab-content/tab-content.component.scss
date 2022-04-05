@@ -1,0 +1,17 @@
+ul{
+    display: flex;
+    li{
+        cursor:pointer;
+        text-decoration: none !important;
+        margin: 10px 5px;
+        padding: 5px 10px;
+        list-style: none;
+        border-bottom: 2px solid #ccc;
+        color: #888;
+        width: 25%;
+        &.active{
+          color: #4C74C9;
+          border-color: #4C74C9;
+        }
+      }  
+  }
