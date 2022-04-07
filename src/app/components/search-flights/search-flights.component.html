@@ -1,5 +1,6 @@
 <div class="container">
-    <form>
+    <form #searchForm="ngForm">
+        {{searchForm.value | json}}
         <div class="locations">
             <div>
                 <t-dropdown [isMandatory]="true" [inputType]="inputTypeEnum.select" [options]="departureOptions" [labelTxt]="'Departure'"
@@ -34,7 +35,7 @@
         </div>
 
         <div class="cta">
-            <primary-button [disabled]="getDisabledClass()" [textToBeDisplayed]="'Search Flights'" (onClickBtn)="handleOnClickEvent($event)"></primary-button>
+            <primary-button [disabled]="getDisabledClass()" [textToBeDisplayed]="'Search Flights'" (onClickBtn)="handleOnClickEvent($event, searchForm)"></primary-button>
         </div>
 
     </form>

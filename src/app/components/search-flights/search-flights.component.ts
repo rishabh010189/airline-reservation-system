@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { InputType } from 'src/app/Enums/input-type.enum';
 import { City } from 'src/app/Model/City.model';
@@ -52,20 +53,27 @@ export class SearchFlightsComponent implements OnInit {
     this.searchCriteria = {...this.searchCriteria, travellerClass : event };
   }
 
-  handleOnClickEvent(event:any){
-    this.flightService.searchCriteria = this.searchCriteria;
-    this.router.navigate(['/searchResults']);
-  }
-
-  getDisabledClass():boolean{
-    let isDisabled = true;
+  handleOnClickEvent(event:any, searchForm:NgForm){
+    console.log(searchForm)
     if(this.searchCriteria && this.searchCriteria.departure && this.searchCriteria.destination
       && this.searchCriteria.departureDate && this.searchCriteria.numOftravellers
       && this.searchCriteria.travellerClass){
-        isDisabled = false;
+        this.flightService.searchCriteria = this.searchCriteria;
+        this.router.navigate(['/searchResults']);
       }
+
+  }
+
+  getDisabledClass():boolean{
+    // let isDisabled = true;
+    // if(this.searchCriteria && this.searchCriteria.departure && this.searchCriteria.destination
+    //   && this.searchCriteria.departureDate && this.searchCriteria.numOftravellers
+    //   && this.searchCriteria.travellerClass){
+    //     isDisabled = false;
+    //   }
       
-      return isDisabled;
+    //   return isDisabled;
+    return false;
   }
 
 }

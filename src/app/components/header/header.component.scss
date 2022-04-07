@@ -62,6 +62,7 @@
           color: #fff;
           font-size: 2em;
           text-align: center;
+          transition: all 0.1s ease-in-out;
         }
       }
     }
@@ -85,6 +86,14 @@
         visibility: visible;
         opacity: 1;
         transition-delay: 0.7s;
+        text-align: center;
+        li{
+          &:hover{
+            a{
+              color: $theme-color;
+            }
+          }
+        }
       }
     }
   }

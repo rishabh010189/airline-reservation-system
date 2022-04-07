@@ -4,7 +4,7 @@
         
         <span *ngSwitchCase="inputTypeEnum.select">
             <span class="display">{{displayedValue}}</span>
-            <select (change)="onChange($event)" name="{{labelTxt}}">
+            <select (change)="onChange($event)" [attr.name]="labelTxt">
                 <option value="">--Select--</option>
                 <option *ngFor="let option of options" value="{{option.code}}">{{option.name}}</option>
             </select>
