@@ -1,13 +1,14 @@
 <div class="container">
-    <form #searchForm="ngForm">
-        {{searchForm.value | json}}
+    <form>
         <div class="locations">
             <div>
                 <t-dropdown [isMandatory]="true" [inputType]="inputTypeEnum.select" [options]="departureOptions" [labelTxt]="'Departure'"
+                [ngClass]="{'error': formControls.departure.isTouched && formControls.departure.isRequired && !formControls.departure.isValid}"
                 (onSelect)="onDepartureSelect($event)"></t-dropdown>
             </div>
             <div>
                 <t-dropdown [isMandatory]="true" [inputType]="inputTypeEnum.select" [options]="departureOptions" [labelTxt]="'Destination'"
+                [ngClass]="{'error': formControls.destination.isTouched && formControls.destination.isRequired && !formControls.destination.isValid}"
                 (onSelect)="onDestinationSelect($event)"></t-dropdown>
             </div>
         </div>
@@ -15,6 +16,7 @@
         <div class="duration">
             <div>
                 <t-dropdown [isMandatory]="true" [inputType]="inputTypeEnum.date" [labelTxt]="'Depart Date'"
+                [ngClass]="{'error': formControls.derpartDate.isTouched && formControls.derpartDate.isRequired && !formControls.derpartDate.isValid}"
                 (onSelect)="onDepartureDateSelect($event)"></t-dropdown>
             </div>
             <div>
@@ -26,16 +28,18 @@
         <div class="additional">
             <div>
                 <t-dropdown [isMandatory]="true" [inputType]="inputTypeEnum.select" [options]="passengersOptions" [labelTxt]="'Travellers'"
+                [ngClass]="{'error': formControls.travellers.isTouched && formControls.travellers.isRequired && !formControls.travellers.isValid}"
                 (onSelect)="onTravellersSelect($event)"></t-dropdown>
             </div>
             <div>
                 <t-dropdown [isMandatory]="true" [inputType]="inputTypeEnum.select" [options]="classOptions" [labelTxt]="'Class'"
+                [ngClass]="{'error': formControls.travelClass.isTouched && formControls.travelClass.isRequired && !formControls.travelClass.isValid}"
                 (onSelect)="onClassSelect($event)"></t-dropdown>
             </div>
         </div>
 
         <div class="cta">
-            <primary-button [disabled]="getDisabledClass()" [textToBeDisplayed]="'Search Flights'" (onClickBtn)="handleOnClickEvent($event, searchForm)"></primary-button>
+            <primary-button [disabled]="getDisabledClass()" [textToBeDisplayed]="'Search Flights'" (onClickBtn)="handleOnClickEvent($event)"></primary-button>
         </div>
 
     </form>

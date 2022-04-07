@@ -43,3 +43,12 @@ fieldset{
         font-size: 20px;
     }
 }
+
+:host(.error){
+    fieldset{
+        border-color: #ff2323;
+        legend{
+            color: #ff2323;
+        }
+    }
+}
