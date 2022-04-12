@@ -76,7 +76,6 @@ export class SearchFlightsComponent implements OnInit {
 
   handleOnClickEvent(event:any){
     this.markFieldsAsDirty();
-    console.log(this.formControls)
     if(this.searchCriteria && this.searchCriteria.departure && this.searchCriteria.destination
       && this.searchCriteria.departureDate && this.searchCriteria.numOftravellers
       && this.searchCriteria.travellerClass){
@@ -84,18 +83,6 @@ export class SearchFlightsComponent implements OnInit {
         this.router.navigate(['/searchResults']);
       }
 
-  }
-
-  getDisabledClass():boolean{
-    // let isDisabled = true;
-    // if(this.searchCriteria && this.searchCriteria.departure && this.searchCriteria.destination
-    //   && this.searchCriteria.departureDate && this.searchCriteria.numOftravellers
-    //   && this.searchCriteria.travellerClass){
-    //     isDisabled = false;
-    //   }
-      
-    //   return isDisabled;
-    return false;
   }
 
   updateFormControl(formControl:SearchFormControl, type:SearchContolType, value:any) : SearchFormControl{

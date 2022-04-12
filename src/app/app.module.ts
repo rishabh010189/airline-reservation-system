@@ -16,6 +16,8 @@ import { SubHeaderComponent } from './components/sub-header/sub-header.component
 import { SliderComponent } from './components/shared/slider/slider.component';
 import { FilterTemplateComponent } from './components/shared/filter-template/filter-template.component';
 import { SortingTemplateComponent } from './components/shared/sorting-template/sorting-template.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,13 @@ import { SortingTemplateComponent } from './components/shared/sorting-template/s
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
