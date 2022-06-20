@@ -14,7 +14,7 @@ export const allFlights = [
             state : 'Maharashtra',
             country : 'India'
           },
-        departureDate: new Date("2022-04-22"),
+        departureDate: new Date("2022-06-22"),
         departTime:"02:30am",
         arrivalTime:"04:50am",
         travelTime:"02h 20m",
@@ -73,7 +73,7 @@ export const allFlights = [
             state : 'UP',
             country : 'India'
           },
-        departureDate: new Date("2022-04-21"),
+        departureDate: new Date("2022-06-21"),
         departTime:"08:30am",
         arrivalTime:"09:00am",
         travelTime:"0h 30m",
@@ -128,7 +128,7 @@ export const allFlights = [
             state : 'Haryana',
             country : 'India'
           },
-        departureDate: new Date("2022-04-22"),
+        departureDate: new Date("2022-06-22"),
         departTime:"02:30am",
         arrivalTime:"04:50pm",
         travelTime:"14h 20m",
@@ -187,7 +187,7 @@ export const allFlights = [
             state : 'Gujrat',
             country : 'India'
           },
-        departureDate: new Date("2022-04-21"),
+        departureDate: new Date("2022-06-21"),
         departTime:"02:30am",
         arrivalTime:"04:50pm",
         travelTime:"14h 20m",
@@ -246,7 +246,7 @@ export const allFlights = [
             state : 'Rajasthan',
             country : 'India'
           },
-        departureDate: new Date("2022-04-21"),
+        departureDate: new Date("2022-06-21"),
         departTime:"03:00pm",
         arrivalTime:"04:50pm",
         travelTime:"1h 50m",
@@ -305,7 +305,7 @@ export const allFlights = [
             state : 'Haryana',
             country : 'India'
           },
-        departureDate: new Date("2022-04-22"),
+        departureDate: new Date("2022-06-22"),
         departTime:"02:30am",
         arrivalTime:"04:50pm",
         travelTime:"14h 20m",
@@ -364,7 +364,7 @@ export const allFlights = [
           state : 'Maharashtra',
           country : 'India'
         },
-      departureDate: new Date("2022-04-22"),
+      departureDate: new Date("2022-06-22"),
       departTime:"08:30am",
       arrivalTime:"10:50am",
       travelTime:"02h 20m",
